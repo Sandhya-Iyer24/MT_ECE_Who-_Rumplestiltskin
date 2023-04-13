@@ -1,0 +1,26 @@
+#include <Servo.h>
+
+const int buttonPin = 4;
+int buttonVal;
+int previousButtonState = 0;
+
+Servo strawGoldServo;
+const int button = 2;
+const int button2 = 4;
+
+void setup() {
+  strawGoldServo.attach(2);
+  strawGoldServo.write(0);
+  pinMode(buttonPin, INPUT);
+  }
+  
+
+void loop() {
+  if (digitalRead(buttonPin) == HIGH) {
+    strawGoldServo.write(180);
+    Serial.println("moved");
+    
+  // } else {
+    // myservo.write(90);
+  }
+}
