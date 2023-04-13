@@ -1,0 +1,37 @@
+const int buttonPin = 4;
+int buttonVal;
+int previousButtonState = 0;
+
+// Servo myservo;
+// const int button = 4;
+// const int button2 = 4;
+
+void setup() {
+  // put your setup code here, to run once:
+  // myservo.attach(4);
+  pinMode(buttonPin, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  buttonVal = digitalRead(buttonPin);
+
+  
+  if (buttonVal ==  HIGH) {
+    digitalWrite(LED_BUILTIN, HIGH);
+    Serial.println("pressed");
+   } else {
+     Serial.println("Released");
+  }
+  
+  
+  //myservo.write(180); 
+  //put your main code here, to run repeatedly:
+  // for (int i = 0; i < 8; i++){
+  //   myservo.write(180);  
+  // }
+    
+
+  
+}
