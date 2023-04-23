@@ -6,9 +6,9 @@
 
 //READ ME
 /*
-Our project follows the fairytale Rumpelstiltskin. A girl is forced to turn straw into gold and she gets the help of an unamed creature. However, she must give payment for his help, so she offers him money, jewels, and her first child. Time passes and she gives birth to her first child. The creature returns and requests his promised payment, but gives her the chance to keep her child if she can guess his name. In the original story, she is able to guess it. However, in our enclosure we gave the user the ability to chose the fate of the baby.
+Our project is an interactive storytelling enclosure that follows the fairytale Rumpelstiltskin. The main character is a village girl, forced to turn straw into gold, and she gets help from an strange creature. However, she must give payment for his help, so she offers him money, jewels, and the promise of her first child. Time passes and she gives birth to her first child. The creature returns and requests his promised payment, but gives her the chance to keep her child if she can guess his name. In the original story, she is able to guess it. However, in our enclosure we gave the user the ability to chose the fate of the baby.
 
-In our project, we want to easily tell the story of Rumpelstiltskin while giving the user a choice to pick an ending. We wanted to guide the user through the story with simple interactions, taking the user through 3 scenes. At the end, the user will decide the ending by picking the right or wrong name.
+For the code in our project, we wanted to program 7 copper tape buttons, 2 servos, and 3 LEDs. We needed the technicalities of the enclosure to follow the narrative to aid in user experience and intuition.
 */
 
 
