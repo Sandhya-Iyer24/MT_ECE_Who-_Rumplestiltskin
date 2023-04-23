@@ -16,7 +16,7 @@ const int servo1 = 11;
 Servo s3baby;
 const int servo2 = 4;
 
-//booleans
+//booleans so the user can't skip scenes
 bool scene1Done = false;
 bool scene2Done = false;
 bool scene3Done = false;
@@ -54,40 +54,43 @@ void setup() {
 
 void loop() {
 //SCENE 1
-  if (digitalRead(s1PullTab) == HIGH) {
+//when Rumpel is moved onto the copper tape, the servo turns 180 and the "next scene" LED indicator lights up
+  if (digitalRead(s1PullTab) == HIGH) { 
     s1strawGold.write(180);
-    Serial.println("moved");
+    Serial.println("moved"); //used to check if the button is working
     digitalWrite(nextLED, HIGH); 
-    scene1Done = true;
+    scene1Done = true; 
   }
     
 //SCENE 2
+//When scene 1 is true and the girl figure is placed in her designated spot in scene 2, the "next" LED will turn off
   if ((scene1Done == true) && (digitalRead(s2GirlPlace) == HIGH)) {
     digitalWrite(nextLED, LOW);
   } 
   
+//When the user drags the payment to the other side, it connects copper tape and triggers the "next" LED
   if (digitalRead(s2Payment) == HIGH) {
     digitalWrite(nextLED, HIGH);
     scene2Done = true;
   }     
       
 
-  //SCENE 3         
+//SCENE 3         
   if((scene2Done == true) && (digitalRead(s3GirlPlace) == HIGH)) {
     digitalWrite(nextLED, LOW);
-    Serial.println("Girl placed 3");
+    Serial.println("Girl placed 3"); //Used to check if button is working
   }
         
-  if((digitalRead(s3Jack) == HIGH) || (digitalRead(s3Harry) == HIGH)) {
+  if((digitalRead(s3Jack) == HIGH) || (digitalRead(s3Harry) == HIGH)) { //When the "Jack" OR "Harry" button is pressed the X mark LED will light up and the servos will turn to 0. Bad ending.
     s3baby.write(0);
     digitalWrite(sadEndLED, HIGH);
-    Serial.println("wrong");
+    Serial.println("wrong"); //Used to check if button is working
     scene3Done = true;
     
-  } else if (digitalRead(s3Rumple) == HIGH){
+  } else if (digitalRead(s3Rumple) == HIGH){ //When the button "Rumpelstiltkin" is pressed, it will light the check mark LED and the servo will turn 180. Good ending.
       s3baby.write(180);
       digitalWrite(happyEndLED, HIGH);
-      Serial.println("right");
+      Serial.println("right"); //Used to check if button is working
       scene3Done = true;
     }
 }
